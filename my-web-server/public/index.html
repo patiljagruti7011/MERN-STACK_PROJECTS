@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Web Server</title>
+</head>
+<body>
+    <h1>Welcome to My Web Server</h1>
+    <button id="getMessage">Get Message</button>
+    <button id="postMessage">Send Message</button>
+    <script>
+        document.getElementById('getMessage').onclick = async () => {
+            const response = await fetch('/api/message');
+            const data = await response.json();
+            alert(data.message);
+        };
+
+        document.getElementById('postMessage').onclick = async () => {
+            const response = await fetch('/api/message', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ text: 'Hello Server!' }),
+            });
+            const data = await response.json();
+            alert(data.message);
+        };
+    </script>
+</body>
+</html>

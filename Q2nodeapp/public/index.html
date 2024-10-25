@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello NodeJS</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <h1>Welcome to My NodeJS App</h1>
+    <button id="helloButton">Get Hello Message</button>
+    <p id="helloMessage"></p>
+
+    <script>
+        $(document).ready(function() {
+            $('#helloButton').click(function() {
+                $.ajax({
+                    url: '/gethello',
+                    method: 'GET',
+                    success: function(data) {
+                        $('#helloMessage').text(data);
+                    },
+                    error: function(err) {
+                        $('#helloMessage').text('Error: ' + err.statusText);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

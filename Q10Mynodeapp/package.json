@@ -1,0 +1,24 @@
+{
+  "name": "q10mynodeapp",
+  "version": "1.0.0",
+  "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "scripts": {
+    "start": "node server.js",
+    "test": "jest",
+    "build": "echo 'Building the project...'",
+    "dev": "nodemon server.js",
+    "lint": "eslint ."
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.13.0",
+    "eslint": "^9.13.0",
+    "eslint-plugin-react": "^7.37.2",
+    "globals": "^15.11.0",
+    "jest": "^29.7.0",
+    "nodemon": "^3.1.7"
+  }
+}
